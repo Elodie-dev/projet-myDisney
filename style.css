@@ -1,6 +1,6 @@
 /* -------------------------------  GENERAL  -------------------------------- */
 @font-face { /* ajout de la font-family: Avenir-Roman-12;*/
-    font-family: 'Avenir-Roman-12';
+    font-family: 'Avenir-Roman';
     src: url('fonts/Avenir-Roman-12.woff') format('woff');
     font-weight: normal;
     font-style: normal;
@@ -17,7 +17,7 @@ html, body, ul
 }
 body 
 {
-	font-family: 'Avenir-Roman-12';
+	font-family: 'Avenir-Roman';
 	line-height: 1.75;
 	background: #040714;
 	color: rgba(255, 255, 255, 0.521);
@@ -47,7 +47,7 @@ h2, h3
 	width: 100%;
 	max-width: 1100px;
 	margin: 0 auto; /* on centre l'élément */
-	padding: 20px 25px; /* on ventile un peu */
+	padding: 1% 5%;
 }
 /* S'applique à tous les elements dans ma div class "header-inner" */
 .header-inner > * 
@@ -55,23 +55,7 @@ h2, h3
 	display: table-cell;
 	vertical-align: middle;
 }
-/* Alignement du menu à droite*/
-.header-nav {
-	text-align: right;
-}
-/*
-   Faire passer le menu en inline (inline-block, inline-table ou inline-flex) pour le rendre sensible à l'alignement à droite. Ses items aussi sont en inline.
-*/
-.header-nav a {
-	position: relative;
-	display: inline-block;
-	vertical-align: middle;
-	font-weight: 300; /* entre regular et light */
-	letter-spacing: 0.028em;
-	color: inherit;
-    text-decoration: none;
-    font-size: 90%;
-}
+
 /* Définition de l'animation stickAnim sur mon header et sur la class "nav-is-stuck" */
 .nav-is-stuck .main-header {
 	position: fixed;
@@ -94,9 +78,20 @@ h2, h3
 		
 	}
 }
+.one
+{
+	position: fixed;
+	top: 0;
+	right: 3%;
+	z-index: 5;
+}
 
 /* -------------------------------  MAIN  -------------------------------- */
 /* Définition de mon image en background */
+#abonnement
+{
+	width: 100%;
+}
 .image-heros
 {
     background:url(./assets/olp_hero_mobile_UKI_FR.jpg)no-repeat;
@@ -111,7 +106,6 @@ h2, h3
     color: #FFF;
 	letter-spacing: 0.07em;
 	line-height: 3em;
-	padding-right: 5vw;
 }
 /* placement logo en utilisant sa div parent */
 .logo
@@ -137,9 +131,9 @@ h2, h3
 	font-size: 90%;
 	margin-left: 10%;
 }
-.abo h2
+.image-heros h2
 {
-	margin-left:7vw;
+	text-align: center;
 	font-size: 120%;
 }
 .abo h3
@@ -186,16 +180,11 @@ button a
 .abo p:nth-child(4)
 {
 	font-size: 60%;
-}
-.abo p:nth-child(5)
-{
 	line-height: 15px;
-	font-size: 60%;
 }
-img[src="./assets/arrow-rate.png"]
+.banner
 {
-	width:5%;
-	height: 5%;
+	display:none;
 }
 .arrow
 {
@@ -237,22 +226,26 @@ img[src="./assets/EU_DynamicContentTile[2].png"], img[src="./assets/olp_side_ali
 {
 	margin-top: 20%;
 	width: 100%;
+	text-align: center;
+}
+.devices
+{
 	display: flex;
-	justify-content: center;
 	flex-wrap:wrap;
 	text-align: center;
 }
 img[src="./assets/device-group-tv.png"], img[src="./assets/device-group-computer.png"], img[src="./assets/device-group-mobile-tablet.png"], img[src="./assets/device-group-game-consoles.png"]
 {
 	width:80%;
-	height:80%;
 }
 .tv, .ordi, .mobile, .console{
 	width: 50%;
-	height: 50%;
 	line-height: normal;
 	font-size: 80%;
 }
+
+/* -------------------------------  FOOTER  -------------------------------- */
+
 footer
 {
 	margin-top: 20%;
@@ -283,6 +276,8 @@ footer a:active
 {
 	color: #FFF;
 }
+
+/* ------------------------------- Animation inscrivez vous from bot to top -------------------------------- */
 .toast
 {
 	display: flex;
@@ -320,5 +315,343 @@ footer a:active
 		transform: translateY(0);
 		background:rgba(0, 0, 0, 0.15);
 		
+	}
+}
+
+/* -------------------------------  DESKTOP VERSION  -------------------------------- */
+
+@media only screen and (min-width: 992px) {
+
+	/* -------------------------------  GENERAL  -------------------------------- */
+	body
+	{
+		line-height: 1.70;
+	}
+	section {
+		padding: 0px 0px 70px 0px;
+	}
+
+	/* -------------------------------  HEADER  -------------------------------- */
+	.header-inner
+	{
+		display: inline;
+		padding:0;
+	}
+	.header-inner img 
+	{
+		padding:3%;
+		height: 35%;
+		width:55%;
+	}
+	.one
+	{
+		top:1%;
+		right:3.8%;
+	}
+	.one a
+	{
+		z-index: 5;
+		background: rgba(0, 0, 0, 0.70);
+		border: thin solid #FFF;
+		padding: 0% 1%;
+		border-radius: 5%;
+		-webkit-border-radius: 5%;
+		-moz-border-radius: 5%;
+		-ms-border-radius: 5%;
+		-o-border-radius: 5%;
+		padding: 8% 13%;
+	}
+	.one a:hover
+	{
+		background:#FFF;
+		color: black;
+	}
+	.header-logo
+	{
+		margin-left: 0;
+	}
+
+	/*Background Section 1 */
+	.image-heros
+	{
+		background:url(./assets/olp_hero_desktop_UKI_FR.jpg)no-repeat;
+		background-size: 100%;
+		padding-bottom: 20%;
+	}
+
+	.image-heros img{
+		width: 9%;
+	}
+
+	/* -------------------------------  SECTIONS  -------------------------------- */
+	.logo
+	{
+		padding-top:15%;
+		padding-left:5%;
+		text-align:left;
+	}
+	.image-heros h2
+	{
+		text-align: left;
+		font-size: 300%;
+		margin: 0 0 0 5%;
+	}
+	.abo
+	{
+		display: block;
+		display: flex;
+		flex-flow: row wrap;
+		width: 40%;
+		text-align: left;
+		margin-left: 5%;
+	}
+	.abo_mois
+	{
+		width: 40%;
+		margin-left: 0;
+		display: flex;
+		flex-flow: column wrap;
+		font-size: initial;
+		line-height: 1.75;
+	}
+	
+	.abo_an
+	{
+		width: 40%;
+		margin-left:2%;
+		display: flex;
+		flex-flow: column wrap;
+		font-size: initial;
+		line-height: 1.75;
+	}
+	hr
+	{
+		display: none;
+	} 
+	.abo p
+	{
+		font-size: 120%;
+		margin:0;
+	}
+	.abo h3
+	{
+		margin:0;
+		font-size: 170%;
+	}
+	.prix
+	{
+		display: flex;
+		justify-content: unset;
+		text-align: left;
+	}
+	.prix p
+	{
+		margin-left: 2%;
+		padding-top: 3%;
+		
+	}
+	button
+	{
+		width: 90%;
+		margin-bottom: 5%;
+		margin-left:0;
+	}
+	button a
+	{
+		margin-left:0;
+	}
+	.abo p:nth-child(4)
+	{
+		font-size: 80%;
+		line-height: 1.75;
+		width: 80%;
+	}
+
+	.banner
+	{
+		margin-top: 10%;
+		display: block;
+		text-align: left;
+	}
+	.banner img 
+	{
+		margin-left: 5%;
+		width:35%;
+		height: 25%;
+	}
+	.arrow
+	{
+		margin-left: 86%;
+		width: 14%;
+		animation: bounce 0.8s ease-in-out infinite alternate;
+		-webkit-animation: bounce 0.8s ease-in-out infinite alternate;
+	}
+
+	@keyframes bounce{
+		0% {transform: translateY(0);}
+		50%   { transform: translateY(-5px); -webkit-transform: translateY(-5px); -moz-transform: translateY(-5px); -ms-transform: translateY(-5px); -o-transform: translateY(-5px); }
+		75%   { transform: translateY(-10px); -webkit-transform: translateY(-10px); -moz-transform: translateY(-10px); -ms-transform: translateY(-10px); -o-transform: translateY(-10px); }
+		100%   { transform: translateY(-12px); -webkit-transform: translateY(-12px); -moz-transform: translateY(-12px); -ms-transform: translateY(-12px); -o-transform: translateY(-12px); }
+	}
+	#divertissement
+	{
+		position: absolute;
+		top:110%;
+	}
+	#regardez
+	{
+		margin-top:15%;
+		margin-left: 10%;
+		width: 80%;
+		display: flex;
+		align-items: center;
+	}
+	#divertissement, #nouveau, #telechargez
+	{
+		width: 80%;
+		margin-top:0;
+		display: flex;
+		align-items: center;
+		margin-left: 10%;
+	}
+	#regardez, #telechargez
+	{
+		flex-direction: row-reverse;
+	}
+	img[src="./assets/EU_DynamicContentTile[2].png"], img[src="./assets/olp_side_align_devicelockup_fr-FR.jpg"], img[src="./assets/FR_OLP1_originals_imagery_June_jpg.jpg"], img[src="./assets/olp_side_align_avatar_english.jpg"]
+	{
+		margin-left: 10%;
+		width:100%;
+		height: 100%;
+	}
+	img[src="./assets/EU_DynamicContentTile[2].png"], img[src="./assets/FR_OLP1_originals_imagery_June_jpg.jpg"]
+	{
+		margin-left:0;
+	}
+	.text1, .text2, .text3, .text4
+	{
+		width:50%;
+		text-align: left;
+	}
+	.image1, .image2, .image3, .image4
+	{
+		width:50%;
+	}
+	.text1 h2, .text2 h2, .text3 h2, .text4 h2
+	{
+		margin-left: 5%;
+		font-size: 34px;
+	}
+	.text1 p, .text2 p, .text3 p, .text4 p
+	{
+		margin-left: 5%;
+		line-height: normal;
+		font-size:18px;
+	}
+	#devices
+	{
+		margin-top: 5%;
+		width: 100%;
+		display: block;
+		text-align: center;
+	}
+	.devices
+	{
+		display: flex;
+		width: 80%;
+		margin-left: 10%;
+	}
+	#devices h2
+	{
+		font-size: 300%;
+	}
+	.tv, .ordi, .mobile, .console{
+		width: 25%;
+		height: 100%;
+		line-height: normal;
+		font-size: 100%;
+	}
+
+	/* ------------------------------- Animation inscrivez vous from bot to top -------------------------------- */
+.toast
+{
+	display: none;
+	justify-content: center;
+	background:  #040714;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+	animation: stickAnim2 1s;
+	-webkit-animation: stickAnim2 1s;
+}
+.toast a
+{
+	display: none;
+	text-decoration: none;
+	color: #FFF;
+}
+.toast button
+{
+	display: none;
+	width: 40%;
+	margin:5% 0;
+	padding: 2%;
+}
+ 
+@keyframes stickAnim2 {
+	0% {
+		transform: translateY(-86px);
+		-webkit-transform: translateY(-86px);
+		-moz-transform: translateY(-86px);
+		-ms-transform: translateY(-86px);
+		-o-transform: translateY(-86px);
+}
+	100% {
+		transform: translateY(0);
+		background:rgba(0, 0, 0, 0.15);
+		
+	}
+}
+	
+	/* -------------------------------  FOOTER  -------------------------------- */
+
+	footer
+	{
+		margin-top: 5%;
+		margin-left: 5%;
+		text-align: center;
+		line-height: 190%;
+		width: 90%;
+	}
+	.logo_footer img
+	{
+		height:2%;
+		width:4%;
+	}
+	footer p
+	{
+		display: flex;
+		justify-content: space-around;
+	}
+	#langues
+	{
+		background:rgba(0, 0, 0, 0.15);
+		color: rgba(255, 255, 255, 0.521);
+		border: none;
+	}
+	footer a
+	{
+		text-decoration: none;
+		color: rgba(255, 255, 255, 0.521);
+		font-size: 80%;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
+	}
+	footer a:active
+	{
+		color: #FFF;
 	}
 }

@@ -7,20 +7,21 @@
 
 			var wScrollTop	= w.pageYOffset || body.scrollTop, // Déclaraion de ma variable wScrollTop (en gros pour qd l'utilisateur scroll)
 				classFound	= body.classList.contains('nav-is-stuck'), // Déclaration de ma variable classFound qui vérifie que le body a la class "nav-is-stuck"
-				navHeight	= header.offsetHeight, // Déclaration de ma variable navHeight qui contient la hauteur de mon header
+				navHeight	= header.clientHeight, // Déclaration de ma variable navHeight qui contient la hauteur de mon header
 				bodyRect	= body.getBoundingClientRect(), // Déclaration de ma variable bodyRect qui contient la taille de mon body.
 				scrollValue	= triggerElement ? triggerElement.getBoundingClientRect().top - bodyRect.top - navHeight  : 600; // Déclaration de ma variable scrollValue qui dit que si mon parametre triggerElement existe alors je récupère sa position top par rapport à la taille de mon body et la hauteur de ma nav, sinon je renvoie 600.
  
 		
 			if ( wScrollTop > scrollValue && !classFound ) { // si le scroll est supérieur à 600 ou qu'il a atteint le triggerElement et la class nav-is-stuck n'existe pas sur body
-				body.className = 'nav-is-stuck'; // J'ajoute à mon body la class "nav-is-stuck"
+				body.classList.toggle('nav-is-stuck');// J'ajoute à mon body la class "nav-is-stuck"
                 body.style.paddingTop = navHeight + 'px'; // J'ajoute à mon body un padding top de la hauteur de ma nav en px
-                header.classList.toggle('toggle'); // Je fais un toggle de la class 'toggle' sur mon header
+				header.classList.toggle('toggle'); // Je fais un toggle de la class 'toggle' sur mon header
+				console.log(navHeight);
 			}
  
 			
 			if ( wScrollTop < 100 && classFound ) {// si le scroll est inférieur à 100 et la class nav-is-stuck existe
-				body.className = ''; // J'écrase la valeur de la class de mon body pour lui attribuer rien
+				body.classList.toggle('nav-is-stuck'); // J'écrase la valeur de la class de mon body pour lui attribuer rien
                 body.style.paddingTop = '0'; // Je définis le padding top de mon body a 0
                 header.classList.toggle('toggle'); // Je fais un toggle de la class 'toggle' sur mon header
 			}
@@ -75,3 +76,5 @@
 	});
  
 }(window, document));
+
+
